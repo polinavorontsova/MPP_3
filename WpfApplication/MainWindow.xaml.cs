@@ -8,6 +8,8 @@ namespace WpfApplication
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new ApplicationView();
         }
     }
 }

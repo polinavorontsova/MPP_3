@@ -6,5 +6,40 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
+        <TreeView
+            ItemsSource="{Binding Namespaces}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Height="500"
+            Width="800">
+            <TreeView.ItemTemplate>
+                <DataTemplate>
+                    <TreeViewItem
+                        Header="{Binding Name}"
+                        ItemsSource="{Binding Classes}">
+                        <TreeViewItem.ItemTemplate>
+                            <DataTemplate>
+                                <TreeViewItem
+                                    Header="{Binding Name}"
+                                    ItemsSource="{Binding Members}"
+                                    IsExpanded="True">
+                                    <TreeViewItem.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </DataTemplate>
+                                    </TreeViewItem.ItemTemplate>
+                                </TreeViewItem>
+                            </DataTemplate>
+                        </TreeViewItem.ItemTemplate>
+                    </TreeViewItem>
+                </DataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Button
+            Command="{Binding OpenAssembly}"
+            Content="View assembly"
+            HorizontalAlignment="center"
+            VerticalAlignment="Bottom"
+            Width="100" />
     </Grid>
 </Window>
