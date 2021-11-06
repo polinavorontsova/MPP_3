@@ -6,17 +6,15 @@ using Core.Entities;
 
 namespace WpfApplication.Views
 {
-    public class NamespaceView : INotifyPropertyChanged
+    public class ClassView : INotifyPropertyChanged
     {
-        private IEnumerable<ClassView> _classes;
-
         private string _name;
 
-        public NamespaceView(NamespaceInformation namespaceInformation)
+        public ClassView(ClassInformation classInformation)
         {
-            Name = namespaceInformation.Name;
-            Classes = namespaceInformation.Classes.Select(type => new ClassView(type));
+            Name = classInformation.Name;
         }
+
 
         public string Name
         {
@@ -24,16 +22,6 @@ namespace WpfApplication.Views
             set
             {
                 _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public IEnumerable<ClassView> Classes
-        {
-            get => _classes;
-            set
-            {
-                _classes = value;
                 OnPropertyChanged();
             }
         }

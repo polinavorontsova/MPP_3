@@ -13,7 +13,8 @@ namespace Core.Entities
         {
             Namespaces = ExtractAssemblyInformation(path)
                 .Select(namespaceToTypesPair =>
-                    new NamespaceInformation(namespaceToTypesPair.Key, namespaceToTypesPair.Value));
+                    new NamespaceInformation(namespaceToTypesPair.Key, namespaceToTypesPair.Value))
+                .Where(namespaceInformation => namespaceInformation.Classes.Count() != 0);
         }
 
         private static Dictionary<string, List<Type>> ExtractAssemblyInformation(string path)
