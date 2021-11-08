@@ -59,6 +59,8 @@ namespace Core.Utilities
                 result += "internal ";
             if (field.IsPublic)
                 result += "public ";
+            if (field.IsInitOnly)
+                result += "readonly ";
             if (field.IsStatic)
                 result += "static ";
             return result;
