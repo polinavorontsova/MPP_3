@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Core.Utilities
 {
-    public static class ModifierUtilities
+    public class ModifierUtilities
     {
         public static string GetMethodModifiers(MethodInfo method)
         {

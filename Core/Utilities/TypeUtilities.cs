@@ -2,7 +2,7 @@
 
 namespace Core.Utilities
 {
-    public static class TypeUtilities
+    public class TypeUtilities
     {
         public static string GetName(Type type)
         {

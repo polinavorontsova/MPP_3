@@ -10,7 +10,7 @@ namespace Core.Entities
         public PropertyInformation(PropertyInfo property)
         {
             Name =
-                $"{TypeUtilities.GetName(property.PropertyType)} {property.Name} {{ {ModifierUtilities.GetPropertyModifiers(property)} }} ";
+                $"{TypeUtilities.GetName(property.PropertyType)} {property.Name} {{ {ModifierUtilities.GetPropertyModifiers(property)} }}";
         }
     }
 }

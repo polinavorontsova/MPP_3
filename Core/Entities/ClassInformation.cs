@@ -8,14 +8,14 @@ namespace Core.Entities
 {
     public class ClassInformation
     {
-        private const BindingFlags TypeBindingFlags =
+        private static BindingFlags TypeBindingFlags =
             BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static |
             BindingFlags.Instance | BindingFlags.DeclaredOnly;
 
         public readonly IEnumerable<FieldInformation> Fields;
         public readonly IEnumerable<MethodInformation> Methods;
 
-        public readonly string Name;
+        public string Name { get; }
         public readonly IEnumerable<PropertyInformation> Properties;
 
         public ClassInformation(Type type)

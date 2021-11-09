@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Core.Utilities
 {
-    public static class CompilerUtilities
+    public class CompilerUtilities
     {
         public static bool IsCompilerGenerated(MemberInfo member)
         {
